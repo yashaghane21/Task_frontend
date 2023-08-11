@@ -13,5 +13,6 @@
 2. Install dependencies:
     npm install
 
-3.Run
-npm run dev
+3.Run:
+
+ npm run dev
