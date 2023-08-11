@@ -11,6 +11,7 @@
    cd frontend
 
 2. Install dependencies:
+ 
     npm install
 
 3.Run:
