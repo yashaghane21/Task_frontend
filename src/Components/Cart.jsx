@@ -1,11 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { useAuth } from './auth';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
     const userId = localStorage.getItem("userid");
+    const navigate =useNavigate()
     const [cart, setCart] = useState([]);
-
+    const [auth,setauth]=useAuth()
     const viewCart = async () => {
         try {
             const { data } = await axios.get(`http://localhost:5000/api/v4/cartlist/${userId}`);
@@ -34,9 +37,18 @@ const Cart = () => {
         }
     };
 
-    useEffect(() => {
-        viewCart();
-    }, []);
+
+        useEffect(() => {
+            if (auth.user) {
+                viewCart();
+            }
+            else {
+                toast.warn("login first")
+                navigate("/")
+            }
+        }, [])
+
+  
 
     return (
         <div>

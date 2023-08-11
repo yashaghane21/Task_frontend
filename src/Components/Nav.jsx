@@ -30,6 +30,7 @@ export default function Nav() {
                     <li className='mx-2 font-bold' onClick={() => navigate("/")}>Home</li>
                     <li className='mx-2 font-bold'>Contact</li>
                     <li className='mx-2 font-bold'>About</li>
+                    <li onClick={()=>navigate("/cart")} className='mx-2 my-1 font-bold hover:border-b-2 border-black inline'>Cart</li>
                     <li className='flex'>
                         {!auth.user ? (
                             <>
@@ -50,6 +51,7 @@ export default function Nav() {
                     <li className='mx-2 my-1 font-semibold hover:border-b-2 border-black inline' onClick={() => navigate("/")}>Home</li>
                     <li className='mx-2 my-1 font-semibold hover:border-b-2 border-black inline'>Contact</li>
                     <li className='mx-2 my-1 font-semibold hover:border-b-2 border-black inline'>About</li>
+                    <li onClick={()=>navigate("/cart")} className='mx-2 my-1 font-semibold hover:border-b-2 border-black inline'>Cart</li>
                     <li className='flex'>
                         {!auth.user ? (
                             <>
